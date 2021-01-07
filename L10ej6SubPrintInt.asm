@@ -42,7 +42,7 @@ print_vec:
      	li a7, PRINT_INT
 	ecall
 	
-		li a0, ')'
+	li a0, ')'
 	li a7, PRINT_CHAR
 	ecall
 	

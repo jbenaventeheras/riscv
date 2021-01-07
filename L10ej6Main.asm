@@ -5,6 +5,8 @@
 	.data
 msg:	.string "INSTRODUCE COORDENADA X: "
 msg2:	.string "INSTRODUCE COORDENADA Y: "
+msg3:	.string "INSTRODUCE INCREMENTO COORDENADA X: "
+msg4:	.string "INSTRODUCE INCREMENTO COORDENADA Y: "
 	
 	.text
 	
@@ -28,8 +30,29 @@ msg2:	.string "INSTRODUCE COORDENADA Y: "
 	ecall
 	
 	mv a1, a0
+
+	#--pedir incremento x e incremento y
+	la a0, msg3
+	li a7, PRINT_STRING
+	ecall
+	#-- Pedir INCRMEMENTO X
+	li a7, READ_INT
+	ecall
+	
+	mv a2, a0
+	
+	la a0, msg4
+	li a7, PRINT_STRING
+	ecall
+	#-- Pedir INCRMEMENTO Y
+	li a7, READ_INT
+	ecall
+	
+	mv a3, a0
+	
+	#--llanar a operar
 	mv a0, t1
-	#--llanar a imprinir entero
+	
  	jal operar
  	
  principal:	
